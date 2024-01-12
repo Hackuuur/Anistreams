@@ -63,14 +63,15 @@ export const paymentRouter = router({
           metadata: {
             userId: user.id,
             orderId: order.id,
-            customerName: " ",
-            customerAddress: " ",
+            customerName: 'John Doe', // Add customer name
+        customerAddress: '123 Main St, City, Country',
           },
           line_items,
         });
         return { url: stripeSession.url };
       } catch (err) {
         console.log(err);
+        console.log("errorrr")
         return { url: null };
       }
     }),
