@@ -63,8 +63,7 @@ export const paymentRouter = router({
           metadata: {
             userId: user.id,
             orderId: order.id,
-            customerName: 'John Doe', // Add customer name
-        customerAddress: '123 Main St, City, Country',
+            
           },
           line_items,
         });
@@ -74,5 +73,29 @@ export const paymentRouter = router({
         console.log("errorrr")
         return { url: null };
       }
+    }),
+    pollOrderStatus: privateProcedure
+    .input(z.object({ orderId: z.string() }))
+    .query(async ({ input }) => {
+      const { orderId } = input
+
+      const payload = await getPayloadClient()
+
+      const { docs: orders } = await payload.find({
+        collection: 'orders',
+        where: {
+          id: {
+            equals: orderId,
+          },
+        },
+      })
+
+      if (!orders.length) {
+        throw new TRPCError({ code: 'NOT_FOUND' })
+      }
+
+      const [order] = orders
+
+      return { isPaid: order._isPaid }
     }),
 });

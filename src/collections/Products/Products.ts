@@ -13,6 +13,17 @@ const adduser: BeforeChangeHook<Product> = async ({ req, data }) => {
   return { ...data, user: user.id };
 };
 
+const syncUser: AfterChangeHook<Product> = async ({req,doc})=>{
+    const fullUser = await req.payload.findByID({
+      collection:'users',
+      id:req.user.id,
+    })
+
+    if(fullUser && typeof fullUser === "object"){
+        const {products} = fullUser
+    }
+}
+
 export const Products: CollectionConfig = {
   slug: "products",
   admin: {
@@ -23,12 +34,13 @@ export const Products: CollectionConfig = {
     beforeChange: [adduser,async (args) =>{
         if(args.operation === "create"){
                 const data = args.data as Product
-
+                console.log('data.price:', data.price);
                 const createdProduct = await stripe.products.create({
                     name:data.name,
                     default_price_data:{
                         currency:"INR",
-                        unit_amount:data.price
+                        unit_amount:Math.round(data.price * 100)
+                        
                     }
                 })
                 const updated: Product = {
@@ -39,10 +51,10 @@ export const Products: CollectionConfig = {
                 return updated
         }else if(args.operation === 'update'){
             const data = args.data as Product
-
+            console.log('data.price:', data.price);
             const updatedProduct = await stripe.products.update(data.stripeId!,{
                 name:data.name,
-                default_price:data.pricedId!,
+                default_price:data.pricedId!,   
             })
             const updated: Product = {
                 ...data,

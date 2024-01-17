@@ -3,13 +3,15 @@ import {ArrowRight } from "lucide-react";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 
 const Page = () => {
   return (
     <Wrapper>
-      <div className="relative w-full h-screen items-end flex justify-center  ">
-        <img
+      <div className="relative w-full h-screen items-end flex justify-center  " id="homepage" >
+        <Image
+          fill
           src="/home.webp"
           alt="hero"
           className="max-w-full fixed" // Maintain aspect ratio

@@ -20,6 +20,8 @@ export interface Config {
 }
 export interface User {
   id: string;
+  products?: (string | Product)[] | null;
+  product_files?: (string | ProductFile)[] | null;
   role: 'admin' | 'user';
   updatedAt: string;
   createdAt: string;
@@ -40,7 +42,8 @@ export interface Product {
   name: string;
   description?: string | null;
   price: number;
-  category: 'action_manga'
+  category:
+    | 'action_manga'
     | 'romance_manga'
     | 'fantasy_manga'
     | 'sci_fi_manga'
@@ -48,8 +51,7 @@ export interface Product {
     | 'adventure_manga'
     | 'comedy_manga'
     | 'drama_manga'
-    | 'mystery_manga'
-  ;
+    | 'mystery_manga';
   product_files: string | ProductFile;
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   pricedId?: string | null;

@@ -80,7 +80,7 @@ const CardSlider = () => {
         >
             {
                 slider.map(data => (
-                    <SwiperSlide style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider rounded-lg ">
+                    <SwiperSlide key={''} style={{ backgroundImage: `url(${data.url})` }} className="myswiper-slider rounded-lg ">
                         <div>
                             <h2>{data.title}</h2>
                             <p>{data.description}</p>

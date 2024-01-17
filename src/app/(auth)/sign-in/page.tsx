@@ -15,6 +15,7 @@ import {
 } from "@/lib/validators/account-credentials-validator";
 import { trpc } from "@/trpc/client";
 import { useRouter,useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const Page = () => {
 
@@ -73,7 +74,8 @@ const Page = () => {
         id="sign-up"
       >
         <div className="flex flex-col items-center space-y-4">
-          <img
+          <Image
+          fill
             src={"/Logo.png"}
             alt="logo"
             className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
