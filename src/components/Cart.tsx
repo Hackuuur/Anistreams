@@ -92,7 +92,7 @@ const Cart = ({ ui, className }: cartProps) => {
           </>
         ) : (
           <div className="flex flex-col justify-center items-center">
-            <Image
+            <img
               height={300}
               width={300}
               src={"/empty.png"}

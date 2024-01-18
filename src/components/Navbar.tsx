@@ -16,12 +16,12 @@ const Navbar = async () => {
   const nextCookies = cookies();
   const { user } = await getServerSideUser(nextCookies);
   return (
-    <div className="h-16 pt-2.5 top-0 sticky  backdrop-blur-md bg-opacity-50 z-50">
+    <><div className="h-16 pt-2.5 top-0 sticky  backdrop-blur-md bg-opacity-50 z-40">
       <Wrapper className="flex justify-between items-center text-white">
         <div className="flex items-center">
           <Image src="/Logo.png" height={30} width={30} alt="Logo" />
           <Link href="/" className="font-bold ml-2 flex items-center">
-            AniWatch
+            AniStream
           </Link>
         </div>
         <div className="hidden md:block ">
@@ -39,12 +39,11 @@ const Navbar = async () => {
                 id="default-search"
                 placeholder="Search Anime you Like..."
                 className="ml-2 px-2 py-1 text-sm text-white rounded-lg bg-black  dark:placeholder-gray-400 "
-                required
-              />
+                required />
               <button className=" px-2 py-1.5 text-white bg-black hover:bg-white hover:border hover:transition-all hover:duration-700 hover:border-black hover:border-solid hover:text-black focus:outline-none font-medium rounded-lg text-sm">
                 Search
               </button>
-              <Cart ui={"Cart"} className="text-white border border-black px-2 py-1 rounded-md"  />
+              <Cart ui={"Cart"} className="text-white border border-black px-2 py-1 rounded-md" />
               {user ? (
                 <UserAccountNav user={user} />
               ) : (
@@ -57,10 +56,15 @@ const Navbar = async () => {
               )}
             </div>
           </div>
-          <MobileNav/>
+          <div className="md:hidden block" >
+
+          <MobileNav />
+          </div>
         </div>
       </Wrapper>
     </div>
+    
+    </>
   );
 };
 

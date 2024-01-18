@@ -68,18 +68,18 @@ const start = async () => {
     })
 
     app.use("/cart",cartRouter)
-  if(process.env.NEXT_PUBLIC_SERVER_URL){
-    app.listen(PORT,async ()=>{
-      payload.logger.info("Next.js is building for production")
+  // if(process.env.NEXT_PUBLIC_SERVER_URL){
+  //   app.listen(PORT,async ()=>{
+  //     payload.logger.info("Next.js is building for production")
 
-      //@ts-expect-error
-      await nextBuild(path.join(__dirname,'../'))
+  //     //@ts-expect-error
+  //     await nextBuild(path.join(__dirname,'../'))
 
-      process.exit()
-    })
+  //     process.exit()
+  //   })
 
-    return
-  }
+  //   return
+  // }
 
   app.use(
     "/api/trpc",

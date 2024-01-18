@@ -58,8 +58,7 @@ const ThankYouPage = async ({
   return (
     <main className='relative lg:min-h-full px-4'>
       <div className='hidden lg:block h-[200px] overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
-        <Image
-          fill
+        <img
           src='/checkout-thank-you.jpg'
           className='h-full w-full object-cover object-center rounded-md '
           alt='thank you for your order'
@@ -124,8 +123,7 @@ const ThankYouPage = async ({
                         <div className='relative h-24 w-24'>
                           {typeof image !== 'string' &&
                           image.url ? (
-                            <Image
-                              fill
+                            <img
                               src={image.url}
                               alt={`${product.name} image`}
                               className='flex-none rounded-md bg-gray-100 object-cover object-center'

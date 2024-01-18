@@ -51,7 +51,7 @@ const Page = () => {
         }
 
         if (isCreator) {
-          router.push('/sell')
+          router.push('/creator')
           return
         }
 
@@ -74,11 +74,11 @@ const Page = () => {
         id="sign-up"
       >
         <div className="flex flex-col items-center space-y-4">
-          <Image
-          fill
+          <img
+            
             src={"/Logo.png"}
             alt="logo"
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
+            className=" w-2 h-2 sm:w-20 sm:h-20 md:w-24 md:h-24"
           />
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
           Sign in to your {isCreator ? 'creator' : ''}{' '}

@@ -24,7 +24,7 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '-Anistream',
+      titleSuffix: '- Anistream',
       ogImage: '/thumbnail.jpg',
     },
   },

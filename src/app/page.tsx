@@ -10,8 +10,8 @@ const Page = () => {
   return (
     <Wrapper>
       <div className="relative w-full h-screen items-end flex justify-center  " id="homepage" >
-        <Image
-          fill
+        <img
+        
           src="/home.webp"
           alt="hero"
           className="max-w-full fixed" // Maintain aspect ratio
