@@ -8,6 +8,7 @@ import { getServerSideUser } from "@/lib/payload-utils";
 import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
 import Cart from "./Cart";
+import MobileNav from "./MobileNav";
 const Navbar = async () => {
 
  
@@ -56,9 +57,7 @@ const Navbar = async () => {
               )}
             </div>
           </div>
-          <div className="md:hidden">
-            <MenuIcon />
-          </div>
+          <MobileNav/>
         </div>
       </Wrapper>
     </div>

@@ -15,7 +15,7 @@ var Media_1 = require("./collections/Media");
 var ProductFile_1 = require("./collections/ProductFile");
 var Orders_1 = require("./collections/Orders");
 dotenv_1.default.config({
-    path: path_1.default.resolve(__dirname, "../.env")
+    path: path_1.default.resolve(__dirname, '../.env'),
 });
 exports.default = (0, config_1.buildConfig)({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
@@ -24,13 +24,12 @@ exports.default = (0, config_1.buildConfig)({
         admin: '/creator',
     },
     admin: {
-        user: "users",
+        user: 'users',
         bundler: (0, bundler_webpack_1.webpackBundler)(),
         meta: {
-            titleSuffix: "- Aniwatch",
-            favicon: "/favicon.ico",
-            ogImage: "/thumbnail.jpg"
-        }
+            titleSuffix: '- Anistream',
+            ogImage: '/thumbnail.jpg',
+        },
     },
     rateLimit: {
         max: 2000,
@@ -40,6 +39,6 @@ exports.default = (0, config_1.buildConfig)({
         url: process.env.MONGODB_URL,
     }),
     typescript: {
-        outputFile: path_1.default.resolve(__dirname, "payload-types.ts") //This feature allows Payload to generate TypeScript types based on your schema, making it easier to work with Payload in a TypeScript project.
-    }
+        outputFile: path_1.default.resolve(__dirname, 'payload-types.ts'),
+    },
 });
