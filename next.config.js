@@ -7,8 +7,8 @@ const nextConfig = {
 				hostname: "localhost",
 			},
 			{
-				protocol: "http",
-				hostname: " http://anistreams-production-8b48.up.railway.app",
+				protocol: "https",
+				hostname: "anistreams-production-9925.up.railway.app",
 			},
 		],
 	},

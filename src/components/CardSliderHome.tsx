@@ -44,7 +44,7 @@ const CardSlider = () => {
   return (
     <>
       <Swiper
-        className=" w-[200px] h-[300px] md:w-[270px] md:h-[400px] lg:w-[500px] lg:h-[440px] rounded-lg "
+        className=" w-[200px] h-[300px] lg:w-[500px] lg:h-[440px] rounded-lg "
         modules={[Pagination, EffectCoverflow, Autoplay]}
         effect={"coverflow"}
         grabCursor={true}
