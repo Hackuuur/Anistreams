@@ -48,6 +48,7 @@ const ThankYouPage = async ({
       `/sign-in?origin=thank-you?orderId=${order.id}`
     )
   }
+  
 
   const products = order.products as Product[]
 
