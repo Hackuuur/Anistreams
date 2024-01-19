@@ -71,7 +71,7 @@ const start = async () => {
     
   if(process.env.NEXT_BUILD){
     app.listen(PORT,async ()=>{
-      payload.logger.info("Next.js is building for production")
+      payload.logger.info("Next.js building for production")
 
       //@ts-expect-error
       await nextBuild(path.join(__dirname,'../'))
