@@ -38,20 +38,20 @@ const start = async () => {
     },
   });
   
+  const payload = await getPayloadClient({
+    initOptions: {
+      // configure the Payload CMS
+      express: app,
+      onInit: async (cms) => {
+        cms.logger.info(`Admin URL ${cms.getAdminURL()}`);
+      },
+    },
+  });
   app.post(
     "/api/webhooks/stripe", 
     webhookMiddleware, 
     stripeWebhookHandler);
     
-    const payload = await getPayloadClient({
-      initOptions: {
-        // configure the Payload CMS
-        express: app,
-        onInit: async (cms) => {
-          cms.logger.info(`Admin URL ${cms.getAdminURL()}`);
-        },
-      },
-    });
 
     const cartRouter = express.Router()
 
@@ -68,18 +68,19 @@ const start = async () => {
     })
 
     app.use("/cart",cartRouter)
-  // if(process.env.NEXT_PUBLIC_SERVER_URL){
-  //   app.listen(PORT,async ()=>{
-  //     payload.logger.info("Next.js is building for production")
+    
+  if(process.env.NEXT_BUILD){
+    app.listen(PORT,async ()=>{
+      payload.logger.info("Next.js is building for production")
 
-  //     //@ts-expect-error
-  //     await nextBuild(path.join(__dirname,'../'))
+      //@ts-expect-error
+      await nextBuild(path.join(__dirname,'../'))
 
-  //     process.exit()
-  //   })
+      process.exit()
+    })
 
-  //   return
-  // }
+    return
+  }
 
   app.use(
     "/api/trpc",
