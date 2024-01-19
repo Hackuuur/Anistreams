@@ -39,7 +39,7 @@ const PaymentStatus = ({
         <p>{orderEmail}</p>
       </div>
 
-      <div className='flex-col md:flex-row gap-2' >
+      <div className='flex flex-col md:flex-row gap-2' >
         <p className='font-medium text-gray-400'>
           Order Status
         </p>
