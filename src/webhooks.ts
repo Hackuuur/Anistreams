@@ -28,7 +28,7 @@ export const stripeWebhookHandler = async (
     return res
       .status(400)
       .send(
-        `Webhook Erro: ${
+        `Webhook Error: ${
           err instanceof Error
             ? err.message
             : 'Unknown Error'
@@ -99,7 +99,7 @@ export const stripeWebhookHandler = async (
     // send receipt
     try {
       const data = await resend.emails.send({
-       from: 'Anistream <hello@anistream.world>',
+        from: 'DigitalHippo <hello@joshtriedcoding.com>',
         to: [user.email],
         subject:
           'Thanks for your order! This is your receipt.',
