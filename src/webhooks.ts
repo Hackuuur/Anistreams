@@ -28,7 +28,7 @@ export const stripeWebhookHandler = async (
     return res
       .status(400)
       .send(
-        `Webhook Error: ${
+        `Webhook Erro: ${
           err instanceof Error
             ? err.message
             : 'Unknown Error'
