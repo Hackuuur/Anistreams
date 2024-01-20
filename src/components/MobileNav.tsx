@@ -8,9 +8,7 @@ import { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
+ 
   SheetTrigger,
 } from "./ui/sheet";
 import UserAccountNav from "./UserAccountNav";

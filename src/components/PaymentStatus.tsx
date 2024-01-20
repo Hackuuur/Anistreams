@@ -31,22 +31,22 @@ const PaymentStatus = ({
   }, [data?.isPaid, router])
 
   return (
-    <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-200'>
-      <div>
-        <p className='font-medium text-gray-400'>
+    <div className='mt-16 flex flex-col md:flex-row text-sm gap-5 md:justify-between text-gray-600'>
+      <div className='flex flex-col gap-2  ' >
+        <p className='font-medium text-gray-300'>
           Shipping To
         </p>
         <p>{orderEmail}</p>
       </div>
 
-      <div className='flex flex-col md:flex-row gap-2' >
-        <p className='font-medium text-gray-400'>
+      <div className='flex flex-col gap-2 ' >
+        <p className='font-medium text-gray-300'>
           Order Status
         </p>
         <p>
           {isPaid
-            ? <span className='text-green-600'  >Payment Successful</span>
-            : <span className='text-red-600' >Pending payment</span>}
+            ? 'Payment successful'
+            : 'Pending payment'}
         </p>
       </div>
     </div>

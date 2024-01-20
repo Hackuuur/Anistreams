@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 import { getPayloadClient } from '@/get-payload'
 import { notFound, redirect } from 'next/navigation'
 import { Product, ProductFile, User } from '@/payload-types'
-import { MANGA_CATEGORIES } from '@/config'
+import { MANGA_CATEGORIES } from '../../config'
 import { formatPrice } from '@/lib/utils'
 import Link from 'next/link'
 import PaymentStatus from '@/components/PaymentStatus'
@@ -48,7 +48,6 @@ const ThankYouPage = async ({
       `/sign-in?origin=thank-you?orderId=${order.id}`
     )
   }
-  
 
   const products = order.products as Product[]
 
@@ -57,11 +56,12 @@ const ThankYouPage = async ({
   }, 0)
 
   return (
-    <main className='relative lg:min-h-full px-4'>
-      <div className='hidden lg:block h-[200px] overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
-        <img
+    <main className='relative lg:min-h-full'>
+      <div className='hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
+        <Image
+          fill
           src='/checkout-thank-you.jpg'
-          className='h-full w-full object-cover object-center rounded-md '
+          className='h-full w-full object-cover object-center'
           alt='thank you for your order'
         />
       </div>
@@ -69,11 +69,11 @@ const ThankYouPage = async ({
       <div>
         <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-32 xl:gap-x-24'>
           <div className='lg:col-start-2'>
-            <p className=' text-base font-medium text-green-600'>
-              Order successful{' '}!
+            <p className='text-sm font-medium text-blue-600'>
+              Order successful
             </p>
             <h1 className='mt-2 text-4xl font-bold tracking-tight text-gray-300 sm:text-5xl'>
-              Thanks for Purchasing
+              Thanks for ordering
             </h1>
             {order._isPaid ? (
               <p className='mt-2 text-base text-muted-foreground'>
@@ -97,7 +97,7 @@ const ThankYouPage = async ({
 
             <div className='mt-16 text-sm font-medium'>
               <div className='text-muted-foreground'>
-                Order No.
+                Order nr.
               </div>
               <div className='mt-2 text-gray-300'>
                 {order.id}
@@ -124,7 +124,8 @@ const ThankYouPage = async ({
                         <div className='relative h-24 w-24'>
                           {typeof image !== 'string' &&
                           image.url ? (
-                            <img
+                            <Image
+                              fill
                               src={image.url}
                               alt={`${product.name} image`}
                               className='flex-none rounded-md bg-gray-100 object-cover object-center'
@@ -134,7 +135,7 @@ const ThankYouPage = async ({
 
                         <div className='flex-auto flex flex-col justify-between'>
                           <div className='space-y-1'>
-                            <h3 className='text-gray-200'>
+                            <h3 className='text-gray-300'>
                               {product.name}
                             </h3>
 
