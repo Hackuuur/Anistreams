@@ -25,7 +25,7 @@ const UserAccountNav = ({ user }: { user: User }) => {
             src="https://github.com/shadcn.png"
             className=" rounded-full "
           />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback>AC</AvatarFallback>
         </Avatar>
       </DrawerTrigger>
       <DrawerContent>
