@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 import express from "express";
 import { getPayloadClient } from "./get-payload";
-import { nextApp, nextHandler } from "./next-utils";
+import { nextApp, nextHandler } from "./next-util";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { appRouter } from "./trpc";
 import { inferAsyncReturnType } from "@trpc/server";
@@ -12,24 +11,9 @@ import nextBuild from "next/dist/build"
 import path from "path";
 import {parse} from 'url';
 import { PayloadRequest } from "payload/types";
-=======
-import express from 'express'
-import { getPayloadClient } from './get-payload'
-import { nextApp, nextHandler } from './next-utils'
-import * as trpcExpress from '@trpc/server/adapters/express'
-import { appRouter } from './trpc'
-import { inferAsyncReturnType } from '@trpc/server'
-import bodyParser from 'body-parser'
-import { IncomingMessage } from 'http'
-import { stripeWebhookHandler } from './webhooks'
-import nextBuild from 'next/dist/build'
-import path from 'path'
-import { PayloadRequest } from 'payload/types'
-import { parse } from 'url'
->>>>>>> 0494f2bd908e329b3530da9b7a158257b3cb564e
 
-const app = express()
-const PORT = Number(process.env.PORT) || 3000
+const app = express();
+const PORT = Number(process.env.PORT) || 3000;
 
 const createContext = ({
   req,
