@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
  
   SheetTrigger,
@@ -18,6 +19,8 @@ import Cart from "./Cart";
 
 const MobileNav = async () => {
   
+  
+
   const nextCookies = cookies();
 
   const { user } = await getServerSideUser(nextCookies);
@@ -37,6 +40,7 @@ const MobileNav = async () => {
           <div>
             {user ? (
               <UserAccountNav user={user} />
+        
             ) : (
               <Link
                 href={"/sign-in"}
@@ -46,7 +50,7 @@ const MobileNav = async () => {
               </Link>
             )}
           </div>
-        </SheetContent>
+           </SheetContent>
       </Sheet>
   );
 };
