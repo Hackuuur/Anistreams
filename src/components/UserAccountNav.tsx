@@ -33,7 +33,7 @@ const UserAccountNav = ({ user }: { user: User }) => {
           <DrawerHeader>
             <Avatar>
               <AvatarImage
-                src="https:/z/github.com/shadcn.png"
+                src="https://github.com/shadcn.png"
                 className=" rounded-full "
               />
               <AvatarFallback>AV</AvatarFallback>
