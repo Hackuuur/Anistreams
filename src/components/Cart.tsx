@@ -100,7 +100,7 @@ const Cart = ({ ui, className }: cartProps) => {
             />
             <div className="flex flex-col items-center gap-2">
               <span>Your Cart is Empty</span>
-              <span> Grab Some Eye Cathing Mangas</span>
+              <span> Grab Some Eye Catching Mangass</span>
             </div>
           </div>
         )}

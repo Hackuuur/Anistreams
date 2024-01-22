@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import AddToCartButton from "@/components/AddToCartButton";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 
 interface PageProps {
@@ -102,9 +103,9 @@ const Page = async ({ params }: PageProps) => {
                 </div>
               </div>
               <div className="mt-4 space-y-6">
-                <p className="text-base text-muted-foreground">
+                <ScrollArea className=" h-[150px] w-full text-base text-muted-foreground">
                   {product.description}
-                </p>
+                </ScrollArea>
               </div>
 
               <div className="mt-6 flex items-center">
