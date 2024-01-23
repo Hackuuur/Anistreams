@@ -7,17 +7,10 @@ const TrendingMangaComponent = () => {
 
   return (
     <div>
-        {MANGA_CATEGORIES.map((category,i)=>{
-            const handleOpen = () =>{
-                if(activeIndex === i){
-                    setActiveIndex(null)
-                } else {
-                    setActiveIndex(i)
-                }
-            }
-            const isopen = i === activeIndex
+        {MANGA_CATEGORIES.map((category)=>{
+            
             return(
-                <TrendingMangaItem category={category} />
+                <TrendingMangaItem category={category}  />
 
             )
         })}
