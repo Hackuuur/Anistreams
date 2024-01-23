@@ -7,10 +7,10 @@ const TrendingMangaComponent = () => {
 
   return (
     <div>
-        {MANGA_CATEGORIES.map((category)=>{
+        {MANGA_CATEGORIES.map((category,i)=>{
             
             return(
-                <TrendingMangaItem category={category}  />
+                <TrendingMangaItem key={i} category={category}  />
 
             )
         })}
