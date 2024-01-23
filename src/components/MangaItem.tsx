@@ -8,7 +8,7 @@ import { Skeleton } from "./ui/skeleton";
 import React from "react";
 
 interface MangaItemProps {
- 
+  title?:string;
   query: TQueryValidator;
   href?:string;
   classname:string
