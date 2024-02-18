@@ -56,11 +56,12 @@ const ThankYouPage = async ({
   }, 0)
 
   return (
-    <main className='relative lg:min-h-full px-4'>
-      <div className='hidden lg:block h-[200px] overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
-        <img
+    <main className='relative lg:min-h-full'>
+      <div className='hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
+        <Image
+          fill
           src='/checkout-thank-you.jpg'
-          className='h-full w-full object-cover object-center rounded-md '
+          className='h-full w-full object-cover object-center'
           alt='thank you for your order'
         />
       </div>
@@ -68,11 +69,11 @@ const ThankYouPage = async ({
       <div>
         <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-32 xl:gap-x-24'>
           <div className='lg:col-start-2'>
-            <p className=' text-base font-medium text-green-600'>
-              Order successful{' '}!
+            <p className='text-sm font-medium text-green-600'>
+              Order successful
             </p>
             <h1 className='mt-2 text-4xl font-bold tracking-tight text-gray-300 sm:text-5xl'>
-              Thanks for Purchasing
+              Thanks for ordering
             </h1>
             {order._isPaid ? (
               <p className='mt-2 text-base text-muted-foreground'>
@@ -80,7 +81,7 @@ const ThankYouPage = async ({
                 available to download below. We&apos;ve sent
                 your receipt and order details to{' '}
                 {typeof order.user !== 'string' ? (
-                  <span className='font-medium text-gray-300'>
+                  <span className='font-medium text-gray-900'>
                     {order.user.email}
                   </span>
                 ) : null}
@@ -96,9 +97,9 @@ const ThankYouPage = async ({
 
             <div className='mt-16 text-sm font-medium'>
               <div className='text-muted-foreground'>
-                Order No.
+                Order nr.
               </div>
-              <div className='mt-2 text-gray-300'>
+              <div className='mt-2 text-gray-400'>
                 {order.id}
               </div>
 
@@ -123,7 +124,8 @@ const ThankYouPage = async ({
                         <div className='relative h-24 w-24'>
                           {typeof image !== 'string' &&
                           image.url ? (
-                            <img
+                            <Image
+                              fill
                               src={image.url}
                               alt={`${product.name} image`}
                               className='flex-none rounded-md bg-gray-100 object-cover object-center'
@@ -133,7 +135,7 @@ const ThankYouPage = async ({
 
                         <div className='flex-auto flex flex-col justify-between'>
                           <div className='space-y-1'>
-                            <h3 className='text-gray-200'>
+                            <h3 className='text-gray-900'>
                               {product.name}
                             </h3>
 
@@ -152,7 +154,7 @@ const ThankYouPage = async ({
                           ) : null}
                         </div>
 
-                        <p className='flex-none font-medium text-gray-300'>
+                        <p className='flex-none font-medium text-gray-400'>
                           {formatPrice(product.price)}
                         </p>
                       </li>
@@ -164,22 +166,22 @@ const ThankYouPage = async ({
               <div className='space-y-6 border-t border-gray-200 pt-6 text-sm font-medium text-muted-foreground'>
                 <div className='flex justify-between'>
                   <p>Subtotal</p>
-                  <p className='text-gray-300'>
+                  <p className='text-gray-400'>
                     {formatPrice(orderTotal)}
                   </p>
                 </div>
 
                 <div className='flex justify-between'>
                   <p>Transaction Fee</p>
-                  <p className='text-gray-300'>
-                    {formatPrice(1)}
+                  <p className='text-gray-400'>
+                    {formatPrice(10)}
                   </p>
                 </div>
 
                 <div className='flex items-center justify-between border-t border-gray-200 pt-6 text-gray-300'>
                   <p className='text-base'>Total</p>
                   <p className='text-base'>
-                    {formatPrice(orderTotal + 1)}
+                    {formatPrice(orderTotal + 10)}
                   </p>
                 </div>
               </div>

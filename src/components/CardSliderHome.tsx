@@ -8,35 +8,35 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 
 const slider = [
   {
-    title: "Donut 1",
+    title: "Testing",
     description:
       "Our Donut Collection Offers a Mouthwatering Array of Flavors, Toppings, and Shapes for Every Craving and Occasion.",
     url: "manga/Bocchi-the-rock-comady.jpg",
   },
   {
-    title: "Donut 2",
+    title: "Testing",
     description:
       "Our Donut Collection Offers a Mouthwatering Array of Flavors, Toppings, and Shapes for Every Craving and Occasion.",
-    url: "manga/Bungo-stray-dogs-drama.jpg",
+    url: "manga/fire-punch-thriller.jpg",
   },
   {
-    title: "Donut 3",
+    title: "Testing",
     description:
       "Our Donut Collection Offers a Mouthwatering Array of Flavors, Toppings, and Shapes for Every Craving and Occasion.",
-    url: "manga/Bocchi-the-rock-comady.jpg",
+    url: "manga/solo-leveling-ad.jpg",
   },
 
   {
-    title: "Donut 4",
+    title: "Testing",
     description:
       "Our Donut Collection Offers a Mouthwatering Array of Flavors, Toppings, and Shapes for Every Craving and Occasion.",
-    url: "manga/Bocchi-the-rock-comady.jpg",
+    url: "manga/undead-unluck-sci-fi.jpg",
   },
   {
-    title: "Donut 5",
+    title: "Testing",
     description:
       "Our Donut Collection Offers a Mouthwatering Array of Flavors, Toppings, and Shapes for Every Craving and Occasion.",
-    url: "manga/Bungo-stray-dogs-drama.jpg",
+    url: "manga/promised-neverland-thriller.jpg",
   },
 ];
 
@@ -77,9 +77,9 @@ const CardSlider = () => {
           },
         }}
       >
-        {slider.map((data) => (
+        {slider.map((data,i) => (
           <SwiperSlide
-            key={""}
+            key={i}
             style={{ backgroundImage: `url(${data.url})` }}
             className="myswiper-slider rounded-lg "
           >
