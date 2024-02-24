@@ -7,7 +7,49 @@ import { paymentRouter } from "./payment-router";
 
 export const appRouter = router({
   auth: authRouter,
-  payment: paymentRouter ,
+  payment: paymentRouter,
+  getInfiniteAnime:publicProcedure.input(z.object({
+    limit:z.number().min(1).max(100),
+    cursor:z.number().nullish(),
+    query:QueryValidator
+  })).query(async ({ input }) => {
+    const { query, cursor } = input;
+    const { sort, limit, ...queryOpts } = query;
+
+    const payload = await getPayloadClient();
+    const parsedQueryOpts: Record<string, { equals: string }> = {};
+
+    Object.entries(queryOpts).forEach(([key, value]) => {
+      parsedQueryOpts[key] = {
+        equals: value,
+      };
+    });
+
+    const page = cursor || 1;
+
+    const {
+      docs: items,
+      hasNextPage,
+      nextPage,
+    } = await payload.find({
+      collection: 'animeproduct',
+      where: {
+        approvedForupload: {
+          equals: "approved",
+        },
+        ...parsedQueryOpts,
+      },
+      sort,
+      depth: 1,
+      limit,
+      page,
+    });
+
+    return {
+      items,
+      nextPage: hasNextPage ? nextPage : null,
+    };
+  }),
   getInfiniteProduct: publicProcedure
     .input(
       z.object({
@@ -16,41 +58,47 @@ export const appRouter = router({
         query: QueryValidator,
       })
     )
+    
     .query(async ({ input }) => {
       const { query, cursor } = input;
-      const { sort, limit, ...queryOpts } = query
+      const { sort, limit, ...queryOpts } = query;
 
-      const payload = await getPayloadClient()
-      const parsedQueryOpts: Record<string,{equals:string}> = {}
+      const payload = await getPayloadClient();
+      const parsedQueryOpts: Record<string, { equals: string }> = {};
 
       Object.entries(queryOpts).forEach(([key, value]) => {
         parsedQueryOpts[key] = {
           equals: value,
-        }
-      })
-      
-      const page = cursor || 1
+        };
+      });
 
-     
+      const page = cursor || 1;
 
-      const{docs:items,hasNextPage,nextPage} = await payload.find({
-        collection:"products",
-        where:{
-          approvedForSale:{
-            equals:'approved',
+      const {
+        docs: items,
+        hasNextPage,
+        nextPage,
+      } = await payload.find({
+        collection: "products",
+        where: {
+          approvedForSale: {
+            equals: "approved",
           },
-          ...parsedQueryOpts
+          ...parsedQueryOpts,
         },
         sort,
-        depth:1,
+        depth: 1,
         limit,
         page,
-      })
-      return{
+      });
+
+      return {
         items,
-        nextPage:hasNextPage ? nextPage : null
-      }
+        nextPage: hasNextPage ? nextPage : null,
+      };
     }),
+
+    
 });
 
 export type AppRouter = typeof appRouter;

@@ -57,7 +57,7 @@ const HomePageSlider: React.FC = async () => {
                 href="#"
                 className="text-sm font-semibold leading-6 text-gray-300"
               >
-                Learn more <span aria-hidden="true">→</span>
+                GO to <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -84,7 +84,7 @@ const HomePageSlider: React.FC = async () => {
               transformOrigin: "bottom left",
             }}
           >
-            <Link href={"/"} className=" font-extrabold">
+            <Link href={"/anime"} className=" font-extrabold">
               Watch Now
             </Link>
             <ArrowRight />

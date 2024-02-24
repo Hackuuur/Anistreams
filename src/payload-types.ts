@@ -13,6 +13,8 @@ export interface Config {
     media: Media;
     product_files: ProductFile;
     orders: Order;
+    anime_files: AnimeFile;
+    animeproduct: Animeproduct;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -22,6 +24,7 @@ export interface User {
   id: string;
   products?: (string | Product)[] | null;
   product_files?: (string | ProductFile)[] | null;
+  anime_files?: (string | AnimeFile)[] | null;
   role: 'admin' | 'user';
   updatedAt: string;
   createdAt: string;
@@ -113,11 +116,47 @@ export interface Media {
     };
   };
 }
+export interface AnimeFile {
+  id: string;
+  user?: (string | null) | User;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+}
 export interface Order {
   id: string;
   _isPaid: boolean;
   user: string | User;
   products: (string | Product)[];
+  updatedAt: string;
+  createdAt: string;
+}
+export interface Animeproduct {
+  id: string;
+  user?: (string | null) | User;
+  name: string;
+  description?: string | null;
+  category:
+    | 'action_manga'
+    | 'romance_manga'
+    | 'fantasy_manga'
+    | 'sci_fi_manga'
+    | 'horror_manga'
+    | 'adventure_manga'
+    | 'comedy_manga'
+    | 'drama_manga'
+    | 'mystery_manga';
+  anime_files: string | AnimeFile;
+  approvedForupload?: ('pending' | 'approved' | 'denied') | null;
+  images: {
+    image: string | Media;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }

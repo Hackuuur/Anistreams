@@ -56,6 +56,16 @@ export const Users: CollectionConfig = {
       hasMany: true,
     },
     {
+      name: 'anime_files',
+      label: 'anime files',
+      admin: {
+        condition: () => false,
+      },
+      type: 'relationship',
+      relationTo: 'anime_files',
+      hasMany: true,
+    },
+    {
       name: 'role',
       defaultValue: 'user',
       required: true,

@@ -14,7 +14,7 @@ const yourOwnAndPurchased: Access = async ({ req }) => {
   if (!user) return false
 
   const { docs: products } = await req.payload.find({
-    collection: 'products',
+    collection:'products',
     depth: 0,
     where: {
       user: {
