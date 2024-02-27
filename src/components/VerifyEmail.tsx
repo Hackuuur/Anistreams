@@ -31,7 +31,7 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
     return (
       <div className="flex h-full flex-col items-center ">
         <div className=" relative pb-3 h-40 w-28 text-muted-foreground">
-          <Image fill src="/Hello.gif" alt="all set Gif" />
+          <Image fill src="/sign-in.png" alt="all set Gif" />
         </div>
         <h3 className="font-semibold text-2xl text-white  ">
           You&apos;re All set

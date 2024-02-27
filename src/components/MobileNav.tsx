@@ -2,6 +2,7 @@ import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Cart from "./Cart";
+import WatchLIst from "./WatchList";
 
 
 const MobileNav = async () => {
@@ -18,9 +19,10 @@ const MobileNav = async () => {
         <Link className="text-white" href="/manga">
           Manga
         </Link>
-        <Link className="text-white" href="/">
-          WatchList
+        <Link className="text-white" href="/animetrending">
+          Trending
         </Link>
+        <WatchLIst ui="WatchList" />
         <Cart ui={"Cart"} className="text-white  rounded-md" />
         
       </SheetContent>

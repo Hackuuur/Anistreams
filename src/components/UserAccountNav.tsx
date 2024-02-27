@@ -22,8 +22,8 @@ const UserAccountNav = ({ user }: { user: User }) => {
       <DrawerTrigger asChild>
         <Avatar>
           <AvatarImage
-            src="https://github.com/shadcn.png"
-            className=" rounded-full "
+            src="/account.jpg"
+            className=" rounded-full cursor-pointer"
           />
           <AvatarFallback>AC</AvatarFallback>
         </Avatar>
@@ -32,10 +32,10 @@ const UserAccountNav = ({ user }: { user: User }) => {
         <div className="mx-auto w-full max-w-sm ">
           <DrawerHeader>
             <Avatar>
-              <AvatarImage
-                src="https://github.com/shadcn.png"
-                className=" rounded-full "
-              />
+            <AvatarImage
+            src="/account.jpg"
+            className=" rounded-full "
+          />
               <AvatarFallback>AV</AvatarFallback>
             </Avatar>
           </DrawerHeader>

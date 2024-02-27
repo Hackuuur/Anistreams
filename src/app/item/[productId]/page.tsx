@@ -7,6 +7,10 @@ import { notFound } from "next/navigation";
 import { MANGA_CATEGORIES } from "@/config";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AnimeFile, ProductFile } from "@/payload-types";
+import { cookies } from "next/headers";
+import { getServerSideUser } from "@/lib/payload-utils";
+import AddTowatchlist from "@/components/Addtowatchlist";
+
 const BREADCRUMBS = [
   { id: 1, name: "Home", href: "/" },
   { id: 2, name: "Anime", href: "/Anime" },
@@ -17,6 +21,10 @@ interface PageProps {
   };
 }
 const page = async ({ params }: PageProps) => {
+
+  const nextCookies = cookies();
+  const { user } = await getServerSideUser(nextCookies);
+
   const { productId } = params;
   const payload = await getPayloadClient();
   const { docs: products } = await payload.find({
@@ -42,6 +50,8 @@ const page = async ({ params }: PageProps) => {
   )?.label;
 
   return (
+    <>
+    {user ? (
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start px-3 md:py-8 relative">
         <div className="text-white mt-8 md:mt-0 px-6 md:ml-8 lg:ml-16 xl:ml-32 z-10">
@@ -98,7 +108,7 @@ const page = async ({ params }: PageProps) => {
                 className="flex items-center bg-white border border-black hover:bg-black hover:text-white ease-in duration-300 py-2 px-4 rounded-full text-black text-base md:text-lg mb-2 md:mb-0 md:mr-4"
               >
                 <FaHeart className="mr-2" />
-                Watch Later
+                <AddTowatchlist AnimeProduct={product} />
               </a>
             </div>
           </div>
@@ -115,11 +125,25 @@ const page = async ({ params }: PageProps) => {
         <AnimeReel
         
           query={{ sort: "asc", limit: 14 }}
-          href="/Anime"
+          href="/anime"
           title="New Anime"
         />
       </div>
-    </div>
+    </div>):(
+       <div className="min-h-screen flex items-center justify-center bg-black">
+       <div className="max-w-md px-8 py-6 bg-white shadow-lg rounded-lg">
+         <h2 className="text-2xl font-bold mb-4 text-black">Please Sign In</h2>
+         <p className="text-gray-600 mb-6">You need to sign in to access this page.</p>
+         <Link
+                href={"/sign-in"}
+                className="px-3 py-2 bg-black rounded-md text-gray-200 hover:text-gray-500"
+              >
+                Sign In
+          </Link>
+       </div>
+     </div>
+    )}
+    </>
   );
 };
 

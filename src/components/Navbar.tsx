@@ -9,6 +9,7 @@ import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
+import WatchLIst from "./WatchList";
 const Navbar = async () => {
   const nextCookies = cookies();
   const { user } = await getServerSideUser(nextCookies);
@@ -24,9 +25,9 @@ const Navbar = async () => {
           </div>
           <div className="hidden md:block ">
             <div className="flex space-x-3 pl-20">
-              <Link href="/">Trending</Link>
+              <Link href="/animetrending">Trending</Link>
               <Link href={"/manga"}>Manga</Link>
-              <Link href="/">WatchList</Link>
+              <WatchLIst ui="WatchList" />
             </div>
           </div>
           <div className="flex items-center">
@@ -59,7 +60,7 @@ const Navbar = async () => {
                 href={"/sign-in"}
                 className="px-3 py-2 text-white hover:text-gray-300"
               >
-                Login
+                Sign In
               </Link>
             )}
           </div>

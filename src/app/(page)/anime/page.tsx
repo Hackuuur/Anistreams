@@ -6,7 +6,7 @@ import React from "react";
 const Page = () => {
   return (
     <Wrapper>
-      <AnimeReel query={{sort:'asc',limit:4}} href="/anime" title="New Anime" />
+      <AnimeReel query={{sort:'asc',limit:4}} href="/animetrending" title="New Anime" />
     </Wrapper>
   );
 };
