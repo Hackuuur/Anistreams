@@ -1,5 +1,5 @@
 import { MANGA_CATEGORIES } from "@/config";
-import { usecart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks/use-cart";
 import { formatPrice } from "@/lib/utils";
 import { Product } from "@/payload-types";
 import { ImageIcon, X } from "lucide-react";
@@ -8,7 +8,7 @@ import React from "react";
 
 const CartItem = ({ product }: { product: Product }) => {
   const { image } = product.images[0];
-  const {removeItem}=usecart()
+  const {removeItem}=useCart()
 
   const label = MANGA_CATEGORIES.find(
     ({ value }) => value === product.category

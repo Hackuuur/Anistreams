@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { MANGA_CATEGORIES } from "@/config";
-import { usecart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks/use-cart";
 import { cn, formatPrice } from "@/lib/utils";
 import { trpc } from "@/trpc/client";
 import { Check, Loader2, X } from "lucide-react";
@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Page = () => {
-  const { items, removeItem } = usecart();
+  const { items, removeItem } = useCart();
 
   const router = useRouter();
 
@@ -50,7 +50,7 @@ const Page = () => {
                 isMounted && items.length === 0,
             })}
           >
-            <h2 className="sr-only">Items in your shopping cart</h2>
+            <h2 className="sr-only text-white">Items in your shopping cart</h2>
 
             {isMounted && items.length === 0 ? (
               <div className="flex h-full flex-col items-center justify-center space-y-1">
@@ -64,7 +64,7 @@ const Page = () => {
                     alt="empty shopping cart hippo"
                   />
                 </div>
-                <h3 className="font-semibold text-2xl">Your cart is empty</h3>
+                <h3 className="font-semibold text-2xl text-white">Your cart is empty</h3>
                 <p className="text-muted-foreground text-center">
                   Whoops! Nothing to show here yet.
                 </p>

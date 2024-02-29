@@ -16,21 +16,25 @@ type CartState = {
   clearCart: () => void
 }
 
-export const usecart = create<CartState>()(
-    persist(
-        (set)=>({
-            items: [],
-            addItem:(product) => 
-               set((state)=>{
-                return { items: [...state.items,{product}]}
-            }),
-            removeItem: (id) => set((state) => ({
-                items: state.items.filter((item)=> item.product.id !== id )
-            })),
-            clearCart: () => set({items: []})
-        }),{
-            name:"cart-storage",
-            storage: createJSONStorage(()=>localStorage),
+export const useCart = create<CartState>()(
+  persist(
+    (set) => ({
+      items: [],
+      addItem: (product) =>
+        set((state) => {
+          return { items: [...state.items, { product }] }
         }),
-
+      removeItem: (id) =>
+        set((state) => ({
+          items: state.items.filter(
+            (item) => item.product.id !== id
+          ),
+        })),
+      clearCart: () => set({ items: [] }),
+    }),
+    {
+      name: 'cart-storage',
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
 )

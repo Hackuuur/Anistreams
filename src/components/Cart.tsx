@@ -14,7 +14,7 @@ import { Separator } from "@radix-ui/react-dropdown-menu";
 import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { usecart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks/use-cart";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import CartItem from "./CartItem";
 import { buttonVariants } from "./ui/button";
@@ -23,7 +23,7 @@ interface cartProps {
   className?: string;
 }
 const Cart = ({ ui, className }: cartProps) => {
-  const { items } = usecart();
+  const { items } = useCart();
   const itemcount = items.length;
 
   const cartTotal = items.reduce(

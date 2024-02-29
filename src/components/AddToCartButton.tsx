@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { usecart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks/use-cart";
 import { Product } from "@/payload-types";
 
 const AddToCartButton = ({ product }: { product: Product }) => {
-  const { addItem } = usecart();
+  const { addItem } = useCart();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   useEffect(() => {
