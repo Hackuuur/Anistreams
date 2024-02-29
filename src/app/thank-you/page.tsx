@@ -57,11 +57,11 @@ const ThankYouPage = async ({
 
   return (
     <main className='relative lg:min-h-full'>
-      <div className='hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12'>
+      <div className='hidden lg:block h-72 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-8'>
         <Image
           fill
           src='/a1.png'
-          className='h-full w-full object-cover object-center'
+          className='h-full w-full object-cover object-center rounded-md'
           alt='thank you for your order'
         />
       </div>

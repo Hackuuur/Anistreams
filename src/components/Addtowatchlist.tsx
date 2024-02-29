@@ -15,17 +15,13 @@ const AddTowatchlist = ({ AnimeProduct }: { AnimeProduct: Animeproduct }) => {
     return () => clearTimeout(timeout);
   }, [isSuccess]);
 
-//   const handleAddToWatchlist = () => {
-//     if (!addedProducts.some((product) => product.id === AnimeProduct.id)) {
-//       addItem(AnimeProduct);
-//       setAddedProducts([...addedProducts, AnimeProduct]);
-//       setIsSuccess(true);
-//     }
-//   };
-
   return (
     <>
-      <button>
+    <button
+      onClick={() => {
+        addItem(AnimeProduct);
+        setIsSuccess(true);
+      }}>
         {isSuccess ? "Added!" : "Add To WatchList"}
       </button>
     </>

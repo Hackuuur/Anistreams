@@ -11,9 +11,12 @@ const AddToCartButton = ({ product }: { product: Product }) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsSuccess(false);
-    }, 2000);
-  });
+      setIsSuccess(false)
+    }, 2000)
+
+    return () => clearTimeout(timeout)
+  }, [isSuccess])
+  
   return (
     <Button
       onClick={() => {

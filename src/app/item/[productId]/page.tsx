@@ -1,12 +1,13 @@
 import AnimeReel from "@/components/AnimeReel";
 import { getPayloadClient } from "@/get-payload";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { FaHeart, FaPlay } from "react-icons/fa";
 import { notFound } from "next/navigation";
 import { MANGA_CATEGORIES } from "@/config";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { AnimeFile, ProductFile } from "@/payload-types";
+// import { AnimeFile } from ".././payload-types";
+import {AnimeFile} from "../../../payload-types"
 import { cookies } from "next/headers";
 import { getServerSideUser } from "@/lib/payload-utils";
 import AddTowatchlist from "@/components/Addtowatchlist";
@@ -41,10 +42,11 @@ const page = async ({ params }: PageProps) => {
   });
 
   const [product] = products;
-  const video = (product.anime_files as AnimeFile).url as string;
-
-  if (!product) return notFound();
-
+  if (!product || !product.anime_files) {
+    return notFound();
+  }
+  const video = (product.anime_files as AnimeFile).url as string
+  
   const label = MANGA_CATEGORIES.find(
     ({ value }) => value === product.category
   )?.label;

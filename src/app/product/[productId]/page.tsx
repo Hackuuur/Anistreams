@@ -4,11 +4,10 @@ import { Wrapper } from "@/components/Wrapper";
 import { MANGA_CATEGORIES } from "@/config";
 import { getPayloadClient } from "@/get-payload";
 import { formatPrice } from "@/lib/utils";
-import { ArrowUp, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import AddToCartButton from "@/components/AddToCartButton";
@@ -39,8 +38,7 @@ const Page = async ({ params }: PageProps) => {
       approvedForSale: {
         equals: "approved",
       },
-    },
-    
+    },  
   });
 
   const [product] = products;

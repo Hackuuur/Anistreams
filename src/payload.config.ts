@@ -11,7 +11,7 @@ import { ProductFiles } from './collections/ProductFile'
 import { Orders } from './collections/Orders'
 import { AnimeProduct } from './collections/AnimeProducts/AnimeProduct'
 import { AnimeFile } from './collections/AnimeFile'
-
+import search from '@payloadcms/plugin-search'
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
@@ -37,7 +37,13 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.MONGODB_URL!,
   }),
+  plugins:[
+    search({
+      collections:['AnimeProduct','Products']
+    })
+  ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
+  
 })

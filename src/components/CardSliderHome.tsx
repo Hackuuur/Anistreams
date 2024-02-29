@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 const slider = [
   {
@@ -44,7 +45,7 @@ const CardSlider = () => {
   return (
     <>
       <Swiper
-        className=" w-[200px] h-[300px] lg:w-[500px] lg:h-[440px] rounded-lg "
+        className=" w-[200px] h-[300px] sm:w-[400px] md:h-[400px] md:w-[300px] lg:w-[500px] lg:h-[440px] rounded-lg "
         modules={[Pagination, EffectCoverflow, Autoplay]}
         effect={"coverflow"}
         grabCursor={true}
@@ -78,6 +79,7 @@ const CardSlider = () => {
         }}
       >
         {slider.map((data,i) => (
+          <Link href={''} >
           <SwiperSlide
             key={i}
             style={{ backgroundImage: `url(${data.url})` }}
@@ -85,9 +87,10 @@ const CardSlider = () => {
           >
             <div>
               <h2>{data.title}</h2>
-              <p>{data.description}</p>
+              <p className="line-clamp-4 -tracking-wider" >{data.description}</p>
             </div>
           </SwiperSlide>
+          </Link>
         ))}
       </Swiper>
     </>
