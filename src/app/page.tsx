@@ -1,11 +1,6 @@
 import { Wrapper } from "@/components/Wrapper";
-import { ArrowRight } from "lucide-react";
-import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
-import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import HeroSlider from "@/components/HomePageSlider";
-
+import HeroSlider from "@/components/HomePage";
 const Page = () => {
   return (
     <Wrapper>
@@ -19,10 +14,9 @@ const Page = () => {
           className="max-w-full fixed" // Maintain aspect ratio
         /> */}
         <div className="absolute top-[10px] w-full  ">
-          <div className="" >
-            <HeroSlider/>
+          <div className="">
+            <HeroSlider />
           </div>
-          
         </div>
       </div>
     </Wrapper>

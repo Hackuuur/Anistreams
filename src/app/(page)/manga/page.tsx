@@ -68,7 +68,7 @@ const manga = () => {
         <div className="flex justify-between" >
 
         <p className="pb-2 text-2xl font-bold">All Available manga</p>
-        <Link href="/" >See All</Link>
+        <Link href="/products" >See All</Link>
         </div>
 
         <div className="grid gap-2 grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
