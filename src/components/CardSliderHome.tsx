@@ -79,7 +79,7 @@ const CardSlider = () => {
         }}
       >
         {slider.map((data,i) => (
-          <Link href={''} >
+          <Link href={''} key={i} >
           <SwiperSlide
             key={i}
             style={{ backgroundImage: `url(${data.url})` }}

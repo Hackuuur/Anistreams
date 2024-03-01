@@ -9,7 +9,7 @@ const Animeimage = ({ urls }: Animeiposterimage) => {
     <>
     {urls.map((url,i)=>(
 
-        <div className="poster">
+        <div className="poster"  key={i}>
                   <Image alt='' fill src={url} />
         </div>
     ))
