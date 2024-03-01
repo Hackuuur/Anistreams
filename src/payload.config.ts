@@ -37,11 +37,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.MONGODB_URL!,
   }),
-  plugins:[
-    search({
-      collections:['AnimeProduct','Products']
-    })
-  ],
+ 
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
