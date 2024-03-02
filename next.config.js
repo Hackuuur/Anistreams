@@ -8,7 +8,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "anistream101.netlify.app"
+				hostname: "anistreams-nine.vercel.app"
 			},
 		],
 	},
