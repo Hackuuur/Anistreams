@@ -8,7 +8,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "anistreams-production-9925.up.railway.app",
+				hostname: "anistream-sand.vercel.app"
 			},
 		],
 	},

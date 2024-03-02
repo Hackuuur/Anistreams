@@ -28,7 +28,7 @@ const HomePage: React.FC = async () => {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-500/10 hover:ring-gray-900/20">
               New Mangas/Manhwa and Anime .{" "}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a href="/animetrending" className="font-semibold text-indigo-600">
                 <span className="absolute inset-0" aria-hidden="true" />
                 More <span aria-hidden="true">&rarr;</span>
               </a>
@@ -55,7 +55,7 @@ const HomePage: React.FC = async () => {
                 </a>
               )}
               <Link
-                href=""
+                href="/Anime"
                 className="text-sm font-semibold leading-6 text-gray-300"
               >
                 GO to <span aria-hidden="true">→</span>
