@@ -59,7 +59,7 @@ const WatchLIst = ({ui,className}:WatchListProps) => {
           <div className="flex mt-8 flex-col justify-center items-center">
            <Link href={'/anime'} >
            
-            <img
+            <Image
              className=" border mb-5 border-white rounded-full  "
               height={100}
               width={100}

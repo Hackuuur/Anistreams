@@ -8,11 +8,7 @@ const Page = () => {
         className="relative w-full items-end flex justify-center  "
         id="homepage"
       >
-        {/* <img
-          src="/home.webp"
-          alt="hero"
-          className="max-w-full fixed" // Maintain aspect ratio
-        /> */}
+  
         <div className="absolute top-[10px] w-full  ">
           <div className="">
             <HeroSlider />

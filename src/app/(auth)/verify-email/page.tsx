@@ -23,7 +23,7 @@ const VerifyEmailPage = ({ searchParams }: PageProps) => {
           <div className="flex h-full flex-col items-center justify-center space-y-4">
 
             <div className="relative mb-4 h-60 w-60 rounded-md">
-              <img src="/sign-up.png" alt="Gmail img"  />
+              <Image src="/sign-up.png" alt="Gmail img"  />
             </div>
 
             <h3 className="font-semibold text-2xl text-white">Check Your Email</h3>

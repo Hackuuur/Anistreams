@@ -20,7 +20,7 @@ const CartItem = ({ product }: { product: Product }) => {
         <div className="flex items-center space-x-4 ">
           <div className="relative aspect-square h-16 w-16 min-w-fit overflow-hidden rounded-md ">
             {typeof image !== "string" && image.url ? (
-              <img
+              <Image
                 src={image.url}
                 alt={product.name}
                 
