@@ -7,7 +7,7 @@ const nextConfig = {
 				hostname: "localhost",
 			},
 			{
-				protocol: "https",
+				protocol: "http",
 				hostname: "anistreams-kohl.vercel.app"
 			},
 		],
