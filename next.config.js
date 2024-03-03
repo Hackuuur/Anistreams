@@ -8,7 +8,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "anistreams-nine.vercel.app"
+				hostname: "anistreams-kohl.vercel.app"
 			},
 		],
 	},
