@@ -57,9 +57,11 @@ const Page = () => {
               <div className="flex h-full flex-col items-center justify-center space-y-1">
                 <div
                   aria-hidden="true"
-                  className="relative mb-4 h-40 w-40 text-muted-foreground"
+                  className="relative mb-4 text-muted-foreground"
                 >
                   <Image
+                   width={160}
+                   height={160}
                     src="/empty1.png"
                     loading="eager"
                     alt="empty shopping cart hippo"
@@ -92,6 +94,7 @@ const Page = () => {
                         <div className="  ">
                           {typeof image !== "string" && image.url ? (
                             <Image
+                            width={80} height={80}
                               src={image.url}
                               alt="product image"
                               className=" h-20 w-20   rounded-md object-cover object-center sm:h-48 sm:w-48"

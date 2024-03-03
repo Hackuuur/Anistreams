@@ -24,7 +24,7 @@ const WatchlistItem = ({ product }: { product: Animeproduct}) => {
               <Image
                 src={image.url}
                 alt={product.name}
-                
+                fill
                 className=" absolute object-cover "
               />
             ) : (

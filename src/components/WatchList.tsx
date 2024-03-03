@@ -60,7 +60,7 @@ const WatchLIst = ({ui,className}:WatchListProps) => {
            <Link href={'/anime'} >
            
             <Image
-             className=" border mb-5 border-white rounded-full  "
+             className="border mb-5 border-white rounded-full  "
               height={100}
               width={100}
               src={"/add.png"}

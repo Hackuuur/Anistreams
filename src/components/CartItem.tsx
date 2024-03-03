@@ -23,7 +23,7 @@ const CartItem = ({ product }: { product: Product }) => {
               <Image
                 src={image.url}
                 alt={product.name}
-                
+                fill
                 className=" absolute object-cover "
               />
             ) : (

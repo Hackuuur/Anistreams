@@ -59,9 +59,9 @@ const ThankYouPage = async ({
     <main className='relative lg:min-h-full'>
       <div className='hidden lg:block h-72 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-8'>
         <Image
-          fill
           src='/a1.png'
           className='h-full w-full object-cover object-center rounded-md'
+          fill
           alt='thank you for your order'
         />
       </div>
@@ -145,13 +145,14 @@ const ThankYouPage = async ({
                           </div>
 
                           {order._isPaid ? (
-                            <a
-                              href={downloadUrl}
-                              download={product.name}
-                              className='text-blue-600 hover:underline underline-offset-2'>
-                              Download asset
-                            </a>
-                          ) : null}
+                            null
+                          ) : 
+                          <a
+                          href={downloadUrl}
+                          download={product.name}
+                          className='text-blue-600 hover:underline underline-offset-2'>
+                          Download asset
+                        </a>}
                         </div>
 
                         <p className='flex-none font-medium text-gray-400'>

@@ -61,9 +61,11 @@ const Page = () => {
       >
         <div className="flex flex-col items-center space-y-4">
           <Image
-            src={"/Logo.png"}
-            alt="logo"
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
+                        src={"/Logo.png"}
+                        alt="logo"
+                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
+                        width={64}
+                        height={64}
           />
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
             Create an Account

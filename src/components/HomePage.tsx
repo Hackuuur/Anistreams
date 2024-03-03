@@ -93,7 +93,7 @@ const HomePage: React.FC = async () => {
             <Link href={"/"}>
               <FaFacebook />
             </Link>
-            <Link href={"/"}>
+            <Link href={"/https://github.com/Hackuuur"}>
               <FaGithub />
             </Link>
             <Link href={"/"}>
