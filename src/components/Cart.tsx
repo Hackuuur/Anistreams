@@ -18,11 +18,12 @@ import { useCart } from "@/hooks/use-cart";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import CartItem from "./CartItem";
 import { buttonVariants } from "./ui/button";
+import { CiShoppingCart } from "react-icons/ci";
 interface cartProps {
-  ui: string;
+  
   className?: string;
 }
-const Cart = ({ ui, className }: cartProps) => {
+const Cart = ({ className }: cartProps) => {
   const { items } = useCart();
   const itemcount = items.length;
 
@@ -37,9 +38,9 @@ const Cart = ({ ui, className }: cartProps) => {
       <SheetTrigger className="group -m-2 flex items-center p-2 ">
         <span
           aria-hidden="true"
-          className={` text-gray-800 ${className || ""}`}
+          className={` ${className || ""}`}
         >
-          {ui}
+          <CiShoppingCart />
         </span>
       </SheetTrigger>
       <SheetContent className="flex w-full text-white flex-col pr-0 sm:max-w-lg bg-black backdrop-blur-md bg-opacity-20">

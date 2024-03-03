@@ -4,6 +4,7 @@ import { Wrapper } from "./Wrapper";
 import Link from "next/link";
 import { MenuIcon, Search, ShoppingCart } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { CiShoppingCart } from "react-icons/ci";
 import { getServerSideUser } from "@/lib/payload-utils";
 import { cookies } from "next/headers";
 import UserAccountNav from "./UserAccountNav";
@@ -26,6 +27,9 @@ const Navbar = async () => {
           <div className="hidden md:block ">
             <div className="flex space-x-3 pl-20">
               <Link href="/animetrending">Trending</Link>
+              <Link href="/anime">
+          Anime
+        </Link>
               <Link href={"/manga"}>Manga</Link>
               <WatchLIst ui="WatchList" />
             </div>
@@ -33,7 +37,7 @@ const Navbar = async () => {
           <div className="flex items-center">
             <div className="hidden md:block">
               <div className="relative flex items-center space-x-2">
-                <Input
+                {/* <Input
                   type="search"
                   id="default-search"
                   placeholder="Search Anime you Like..."
@@ -42,10 +46,10 @@ const Navbar = async () => {
                 />
                 <button className=" px-2 py-1.5 text-white bg-black hover:bg-white hover:border hover:transition-all hover:duration-700 hover:border-black hover:border-solid hover:text-black focus:outline-none font-medium rounded-lg text-sm">
                   Search
-                </button>
+                </button> */}
                 <Cart
-                  ui={"Cart"}
-                  className="text-white border border-black px-2 py-1 rounded-md"
+                  
+                  className="text-white px-2 items-center text-[28px]"
                 />
               </div>
             </div>

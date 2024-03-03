@@ -45,8 +45,11 @@ const PaymentStatus = ({
         </p>
         <p>
         {isPaid
-            ? <span className='text-green-600'  >Payment Successful</span>
-            : <span className='text-red-600' >Pending payment</span>}
+            ? 
+            <span className='text-red-600' >Pending payment</span>
+            : 
+            <span className='text-green-600'  >Payment Successful</span>
+          }
         </p>
       </div>
     </div>

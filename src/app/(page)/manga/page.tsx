@@ -30,11 +30,12 @@ const manga = () => {
             series, monetize your stories, engage your fan base, and share your
             Stories.
           </p>
-          <div className="w-full items-center justify-center  ">
+          <div className="w-full items-center  px-3 flex  ">
             <Cart
-              ui="Check Cart"
-              className="h-7 w-fit  px-3 pt-[2px] rounded-lg bg-white hover:bg-black hover:text-white  "
+              className="text-[28px]"
             />
+            <span className="text-lg" >Cart</span>
+
           </div>
         </div>
         <div className="">
@@ -49,7 +50,7 @@ const manga = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-3 pb-2">
             <MangaItem
               classname="sm:w-[150px]  h-[220px] sm:h-[210px] lg:w-[170px] lg:h-[230px] md:w-[170px] md:h-[210px]"
-              query={{ sort: "-createdAt", limit: 10 }}
+              query={{ sort: "-createdAt", limit: 8 }}
             />
           </div>
         </div>
@@ -71,10 +72,10 @@ const manga = () => {
         <Link href="/products" >See All</Link>
         </div>
 
-        <div className="grid gap-2 grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
+        <div className="grid gap-2 grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 px-3">
           <MangaItem
             classname="sm:w-[150px]  h-[220px] sm:h-[210px] lg:w-[170px] lg:h-[230px] md:w-[170px] md:h-[210px]"
-            query={{ sort: "asc", limit: 10 }}
+            query={{ sort: "asc", limit: 20 }}
           />
         </div>
       </div>

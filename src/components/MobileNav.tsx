@@ -16,6 +16,9 @@ const MobileNav = async () => {
         <Link className="text-white" href="/">
           Home
         </Link>
+        <Link className="text-white" href="/anime">
+          Anime
+        </Link>
         <Link className="text-white" href="/manga">
           Manga
         </Link>
@@ -23,7 +26,7 @@ const MobileNav = async () => {
           Trending
         </Link>
         <WatchLIst ui="WatchList" />
-        <Cart ui={"Cart"} className="text-white  rounded-md" />
+        <Cart className="text-white  text-[28px]" />
         
       </SheetContent>
     </Sheet>

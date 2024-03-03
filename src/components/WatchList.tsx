@@ -51,7 +51,7 @@ const WatchLIst = ({ui,className}:WatchListProps) => {
                   <WatchlistItem  product={product} key={product.id} />
                 ))}
               </ScrollArea>
-              WatchList Itmes
+              
             </div>
             
           </>
@@ -70,7 +70,7 @@ const WatchLIst = ({ui,className}:WatchListProps) => {
             <div className="flex flex-col items-center gap-2">
               <span>Add Your Favourite Anime in This Bucket </span>
               <span>&</span>
-              <span>Enjoye After</span>
+              <span>Enjoy After</span>
             </div>
           </div>
         )}

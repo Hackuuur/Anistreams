@@ -9,7 +9,7 @@ import AnimeListing from "./AnimeListing";
 
 interface AnimeReel {
   title: string;
-  href: string;
+  href?: string;
   query: TQueryValidator;
 }
 
