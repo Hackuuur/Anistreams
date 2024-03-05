@@ -61,7 +61,7 @@ const page = async ({ params }: PageProps) => {
                 <div className="flex flex-col py-2">
                   <ol className="flex items-center space-x-2">
                     {BREADCRUMBS.map((breadcrumb, i) => (
-                      <li key={breadcrumb.href}>
+                      <li key={breadcrumb.href}  >
                         <div className="flex items-center text-sm">
                           <Link
                             href={breadcrumb.href}

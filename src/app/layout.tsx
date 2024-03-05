@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
@@ -33,7 +32,6 @@ export default function RootLayout({
             <div className='flex-grow flex-1'>
               {children}
             </div>
-            <Footer />
           </Providers>
           <SpeedInsights/>
         </main>

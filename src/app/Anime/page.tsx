@@ -1,8 +1,15 @@
+import AnimeReel from '@/components/AnimeReel'
+import { Wrapper } from '@/components/Wrapper'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <Wrapper>
+      <div className="" >
+      <AnimeReel query={{sort:'desc',limit:25}} title="All Manga" />
+      </div>
+     
+    </Wrapper>
   )
 }
 

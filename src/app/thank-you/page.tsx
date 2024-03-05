@@ -135,7 +135,7 @@ const ThankYouPage = async ({
 
                         <div className='flex-auto flex flex-col justify-between'>
                           <div className='space-y-1'>
-                            <h3 className='text-gray-900'>
+                            <h3 className='text-gray-300'>
                               {product.name}
                             </h3>
 
@@ -146,6 +146,7 @@ const ThankYouPage = async ({
 
                           {order._isPaid ? (
                             null
+
                           ) : 
                           <a
                           href={downloadUrl}

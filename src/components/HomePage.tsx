@@ -84,7 +84,7 @@ const HomePage: React.FC = async () => {
               transformOrigin: "bottom left",
             }}
           >
-            <Link href={"/anime"} className=" font-extrabold">
+            <Link href={"/Anime"} className=" font-extrabold">
               Watch Now
             </Link>
             <ArrowRight />
@@ -93,7 +93,7 @@ const HomePage: React.FC = async () => {
             <Link href={"/"}>
               <FaFacebook />
             </Link>
-            <Link href={"/https://github.com/Hackuuur"}>
+            <Link href={"/github.com/Hackuuur"}>
               <FaGithub />
             </Link>
             <Link href={"/"}>

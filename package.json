@@ -53,6 +53,7 @@
     "lucide-react": "^0.302.0",
     "next": "14.0.1",
     "next-cloudinary": "^6.0.1",
+    "ngrok": "^5.0.0-beta.2",
     "nodemailer": "^6.9.7",
     "payload": "^2.0.15",
     "react": "^18",
