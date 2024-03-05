@@ -27,7 +27,7 @@ const Navbar = async () => {
           <div className="hidden md:block ">
             <div className="flex space-x-3 pl-20">
               <Link href="/animetrending">Trending</Link>
-              <Link href="/anime">
+              <Link href="/Anime">
           Anime
         </Link>
               <Link href={"/manga"}>Manga</Link>

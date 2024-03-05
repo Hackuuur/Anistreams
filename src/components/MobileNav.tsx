@@ -16,7 +16,7 @@ const MobileNav = async () => {
         <Link className="text-white" href="/">
           Home
         </Link>
-        <Link className="text-white" href="/anime">
+        <Link className="text-white" href="/Anime">
           Anime
         </Link>
         <Link className="text-white" href="/manga">
