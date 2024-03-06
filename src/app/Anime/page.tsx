@@ -6,7 +6,7 @@ const page = () => {
   return (
     <Wrapper>
       <div className="" >
-      <AnimeReel query={{sort:'desc',limit:25}} title="All Manga" />
+      <AnimeReel query={{sort:'desc',limit:25}} title="All Anime" />
       </div>
      
     </Wrapper>
