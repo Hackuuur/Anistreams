@@ -1,10 +1,11 @@
 import React from 'react'
-import { MANGA_CATEGORIES } from "@/config";
+import { MANGA_CATEGORIES } from "../config";
 import { Animeproduct } from '@/payload-types';
 import { watchlist } from '@/hooks/use-watchlist';
 import Link from 'next/link';
 import { ImageIcon, X } from 'lucide-react';
 import Image from 'next/image';
+
 
 const WatchlistItem = ({ product }: { product: Animeproduct}) => {
     const { image } = product.images[0];

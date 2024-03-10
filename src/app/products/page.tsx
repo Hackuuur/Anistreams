@@ -1,13 +1,13 @@
 import MangaItem from "@/components/MangaItem";
 import { Wrapper } from "@/components/Wrapper";
-import { MANGA_CATEGORIES } from "@/config";
+import { MANGA_CATEGORIES } from "../../config";
+import Footer from "@/components/Footer";
 
 type Param = string | string[] | undefined;
 
 interface ProductsPageProps {
   searchParams: { [key: string]: Param };
 }
-type Category = typeof MANGA_CATEGORIES[number]
 
 
 const parse = (param: Param) => {
@@ -20,6 +20,7 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
 
 
   return (
+    <>
     <Wrapper>
         <h1 className="text-white px-2 py-3" >All Mangas</h1>
         <div className="grid gap-2 grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 px-2 ">
@@ -34,6 +35,8 @@ const ProductsPage = ({ searchParams }: ProductsPageProps) => {
       />
       </div>
     </Wrapper>
+    <Footer />
+    </>
   );
 };
 

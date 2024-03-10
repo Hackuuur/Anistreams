@@ -5,7 +5,8 @@ import { Skeleton } from "./ui/skeleton";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Animeimage from "./Animeimage";
-import { MANGA_CATEGORIES } from "@/config";
+import { MANGA_CATEGORIES } from "../config";
+
 interface classname {
   className?: string;
   hover?: string;

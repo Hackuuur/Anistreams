@@ -1,7 +1,7 @@
 import ImageSlider from "@/components/ImageSlider";
 import MangaItem from "@/components/MangaItem";
 import { Wrapper } from "@/components/Wrapper";
-import { MANGA_CATEGORIES } from "@/config";
+import { MANGA_CATEGORIES } from "../../../config";
 import { getPayloadClient } from "@/get-payload";
 import { formatPrice } from "@/lib/utils";
 import { Check } from "lucide-react";
@@ -12,6 +12,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import AddToCartButton from "@/components/AddToCartButton";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Footer from "@/components/Footer";
+
 
 
 interface PageProps {
@@ -54,7 +56,7 @@ const Page = async ({ params }: PageProps) => {
     .filter(Boolean) as string[];
 
   return (
-    
+    <>
     <Wrapper className="lg:px-[155px] md:px[100px]" >
       <div className="bg-black">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-[20px] lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -141,6 +143,8 @@ const Page = async ({ params }: PageProps) => {
           query={{sort:'asc' ,limit:6 }}/>  
       </div>
     </Wrapper>
+    <Footer />
+    </>
   );
 };
 

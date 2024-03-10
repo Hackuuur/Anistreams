@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { MANGA_CATEGORIES } from "@/config";
+import { MANGA_CATEGORIES } from "../config";
 import Image from "next/image";
 import Link from "next/link";
 import { Fingerprint } from "lucide-react";

@@ -1,4 +1,4 @@
-import { MANGA_CATEGORIES } from '@/config'
+import { MANGA_CATEGORIES } from '../config'
 import React, { useState } from 'react'
 import TrendingMangaItem from './TrendingMangaItem'
 

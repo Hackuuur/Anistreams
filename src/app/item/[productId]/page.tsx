@@ -3,7 +3,7 @@ import { getPayloadClient } from "@/get-payload";
 import Link from "next/link";
 import { FaHeart, FaPlay } from "react-icons/fa";
 import { notFound } from "next/navigation";
-import { MANGA_CATEGORIES } from "@/config";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AnimeFile } from "../../../payload-types";
 import React from "react";
@@ -12,6 +12,9 @@ import { getServerSideUser } from "@/lib/payload-utils";
 import AddTowatchlist from "@/components/Addtowatchlist";
 import WatchLIst from "@/components/WatchList";
 import { SiAwesomelists } from "react-icons/si";
+
+import { MANGA_CATEGORIES } from "../../../config";
+import Footer from "@/components/Footer";
 
 const BREADCRUMBS = [
   { id: 1, name: "Home", href: "/" },
@@ -147,6 +150,7 @@ const page = async ({ params }: PageProps) => {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };

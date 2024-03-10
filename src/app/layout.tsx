@@ -7,6 +7,7 @@ import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
             <div className='flex-grow flex-1'>
               {children}
             </div>
+            
           </Providers>
           <SpeedInsights/>
         </main>

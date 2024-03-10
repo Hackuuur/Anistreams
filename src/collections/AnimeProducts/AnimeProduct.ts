@@ -1,4 +1,5 @@
 import { MANGA_CATEGORIES } from "../../config";
+
 import { CollectionConfig } from "payload/types";
 
 export const AnimeProduct: CollectionConfig={

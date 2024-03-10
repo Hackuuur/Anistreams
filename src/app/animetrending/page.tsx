@@ -4,6 +4,7 @@ import { Wrapper } from "@/components/Wrapper";
 import { PlaneIcon, PlayIcon } from "lucide-react";
 import React from "react";
 import Link from "next/link"; // Import Link from Next.js
+import Footer from "@/components/Footer";
 
 const Page = () => {
   const BREADCRUMBS = [
@@ -11,6 +12,7 @@ const Page = () => {
     { id: 2, name: "Anime", href: "/Anime" },
   ];
   return (
+    <>
     <Wrapper>
       <div className="">
         <ul className="flex"> {/* Added ul tag with flex class */}
@@ -38,6 +40,8 @@ const Page = () => {
       </div>
       <AnimeReel query={{sort:'-createdAt',limit:21}}  title="New Trending Anime" />
     </Wrapper>
+    <Footer />
+    </>
   );
 };
 
