@@ -114,7 +114,7 @@ const Page = async () => {
         </div>
       </div>
     </Wrapper>
-    
+   
     </>
   );
 };

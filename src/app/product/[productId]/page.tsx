@@ -140,7 +140,7 @@ const Page = async ({ params }: PageProps) => {
         <MangaItem
           classname="sm:w-[150px]  h-[220px] sm:h-[210px] lg:w-[170px] lg:h-[230px] md:w-[170px] md:h-[210px]" 
           href='/products'
-          query={{sort:'asc' ,limit:6 }}/>  
+          query={{sort:'asc' ,limit:5 }}/>  
       </div>
     </Wrapper>
     <Footer />
